@@ -36,26 +36,24 @@ export default function Login() {
       .then((res) => {
         if (res) {
           setState(init);
-          alert("login successfull")
-          navigate("/")
+          alert("login successfull");
+          navigate("/");
         } else {
+          setState(init);
           alert("Login failed");
         }
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
+        setState(init);
+        alert("Login failed");
       });
   };
 
   let { email, password } = state;
   return (
     <>
-      <Flex
-        minH={"100vh"}
-        align={"center"}
-        justify={"center"}
-        bg={"#f7fafc"}
-      >
+      <Flex minH={"100vh"} align={"center"} justify={"center"} bg={"#f7fafc"}>
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Stack align={"center"}>
             <Heading fontSize={"4xl"}>Sign in to your account</Heading>
